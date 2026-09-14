@@ -23,11 +23,11 @@ By the end of the hands-on, you should be able to:
   - forward model,
   - noise covariance;
 - compute cortical EEG source estimates using minimum-norm imaging;
-- compare different inverse-map variants:
+- compare different inverse-map solutions:
   - **MNE**,
   - **dSPM**,
   - **sLORETA**;
-- explore the effect of regularization by changing the assumed **SNR**;
+- explore the effect of regularization parameter by changing the assumed **SNR**;
 - inspect source activity around the EEG **N170** response;
 - extract source time series from predefined visual ROIs;
 - compare the conclusions obtained with Brainstorm with those obtained by the group working with **MNE-Python**.
@@ -38,7 +38,7 @@ By the end of the hands-on, you should be able to:
 
 We use the **Wakeman & Henson multimodal face-processing dataset**.
 
-For this practical we focus on:
+For this hands-on we focus on:
 
 - subject: **sub-01**
 - run: **Run 01**
@@ -138,13 +138,12 @@ Before continuing, make sure you can identify:
 
 # 4. From the introductory talk to the practical
 
-The practical starts where the introductory lecture ends.
+The hands-on starts where the introductory lecture ends.
 
 The lecture introduced:
 
 - the ill-posed M/EEG inverse problem;
 - the forward model;
-- the lead-field matrix;
 - minimum-norm estimation;
 - regularization;
 - depth weighting;
@@ -159,8 +158,6 @@ Here we will keep the **data and forward model fixed** and explore what happens 
 ---
 
 # 5. Brainstorm source-estimation tutorial
-
-Before starting the exercise, have a look at:
 
 ➡️ [Brainstorm Tutorial 22: Source estimation](https://neuroimage.usc.edu/brainstorm/Tutorials/SourceEstimation)
 
@@ -191,8 +188,8 @@ For all comparisons, keep the following choices fixed:
 
 We will vary only two factors:
 
-1. **inverse-map variant**
-2. **regularization level**
+1. **inverse method**
+2. **regularization parameter**
 
 ---
 
@@ -419,16 +416,6 @@ Brainstorm scout documentation:
 
 For a polarity-insensitive Brainstorm–MNE comparison, use the same **RMS/power-like summary** in both packages.
 
-If you use signed Mean/PCA time series instead, document the sign-handling convention because cortical orientation can affect the sign.
-
-> **Optional Brainstorm-only demonstration**  
-> The original PracticalMEEG tutorial creates small functional scouts around approximately:
->
-> - V1: ~85 ms
-> - OFA: ~130 ms
-> - FFA: ~165 ms
->
-> These are useful pedagogically, but atlas-defined ROIs are preferable for the main Brainstorm–MNE comparison because they are not selected from the observed activation.
 
 ---
 
@@ -447,12 +434,24 @@ Complete one row for each solution you inspect.
 | sLORETA | 3 | Famous |  |  |  |  |
 | sLORETA | 3 | Unfamiliar |  |  |  |  |
 | sLORETA | 3 | Scrambled |  |  |  |  |
+| MNE | 1 | Famous |  |  |  |  |
+| MNE | 1 | Unfamiliar |  |  |  |  |
+| MNE | 1 | Scrambled |  |  |  |  |
 | dSPM | 1 | Famous |  |  |  |  |
 | dSPM | 1 | Unfamiliar |  |  |  |  |
 | dSPM | 1 | Scrambled |  |  |  |  |
+| sLORETA | 1 | Famous |  |  |  |  |
+| sLORETA | 1 | Unfamiliar |  |  |  |  |
+| sLORETA | 1 | Scrambled |  |  |  |  |
+| MNE | 5 | Famous |  |  |  |  |
+| MNE | 5 | Unfamiliar |  |  |  |  |
+| MNE | 5 | Scrambled |  |  |  |  |
 | dSPM | 5 | Famous |  |  |  |  |
 | dSPM | 5 | Unfamiliar |  |  |  |  |
 | dSPM | 5 | Scrambled |  |  |  |  |
+| sLORETA | 5 | Famous |  |  |  |  |
+| sLORETA | 5 | Unfamiliar |  |  |  |  |
+| sLORETA | 5 | Scrambled |  |  |  |  |
 
 The aim is **not** to nominate a universally “best” solution.
 
@@ -527,22 +526,4 @@ After matching the main assumptions, how large are the remaining differences bet
 - [Wakeman & Henson dataset paper](https://www.nature.com/articles/sdata20151)
 - [From raw MEG/EEG to publication – Frontiers Research Topic](https://www.frontiersin.org/research-topics/5158/from-raw-megeeg-to-publication-how-to-perform-megeeg-group-analysis-with-free-academic-software/magazine)
 
----
 
-## Suggested repository structure
-
-```text
-brainstorm-source-imaging/
-│
-├── README.md
-├── tutorial/
-│   └── brainstorm_source_imaging.md
-├── figures/
-│   └── ...
-├── scripts/
-│   └── ...
-└── materials/
-    └── ...
-```
-
-The large PracticalMEEG dataset should remain on **Zenodo** rather than being committed to GitHub.
