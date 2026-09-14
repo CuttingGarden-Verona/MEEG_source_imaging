@@ -24,7 +24,7 @@ Original PracticalMEEG training material:
 
 ## Tutorial
 
-➡️ [EEG Source Imaging with Brainstorm](tutorial.md)
+➡️ [EEG Source Imaging with Brainstorm](tutorial/brainstorm_source_imaging.md)
 
 During the hands-on we will compare:
 
