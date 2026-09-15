@@ -1,0 +1,133 @@
+{
+  "generated_utc": "2026-09-15T06:33:36+00:00",
+  "generated_by": "00_prepare_dataset.py",
+  "dataset": {
+    "name": "ds000117 (Wakeman & Henson 2015), versione ridotta 'ds000117_pruned'",
+    "subject": "sub-01",
+    "session": "ses-meg",
+    "task": "facerecognition",
+    "run": "run-01",
+    "note": "dati MEG/EEG già processati con MaxFilter/SSS"
+  },
+  "software": {
+    "python": "3.11.5",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "mne": "1.12.1"
+  },
+  "preprocessing": {
+    "order": "filtro 1-40 Hz -> epoche senza soglia -> ICA (EOG+ECG) -> soglia ampiezza",
+    "channel_types_fixed": {
+      "EEG061": "eog",
+      "EEG062": "eog",
+      "EEG063": "ecg",
+      "EEG064": "misc"
+    },
+    "eeg_reference": "average (poi ri-aggiunto come proiettore)",
+    "resample_hz": 300,
+    "filter_hz": [
+      1,
+      40
+    ],
+    "epochs_tmin_tmax_s": [
+      -0.5,
+      2.0
+    ],
+    "baseline_s": [
+      -0.2,
+      0.0
+    ],
+    "projector_delay_correction_s": 0.034,
+    "ica_variance_explained": 0.95,
+    "ica_excluded_components": [
+      0,
+      23,
+      1,
+      27
+    ],
+    "reject_after_ica": {
+      "grad": 4e-10,
+      "mag": 4e-12
+    },
+    "n_epochs_before_reject": 146,
+    "n_epochs_after_reject": 146,
+    "n_epochs_per_condition": {
+      "famous": 49,
+      "unfamiliar": 47,
+      "scrambled": 50
+    }
+  },
+  "prepared_here": {
+    "modality": "EEG only",
+    "n_eeg_channels": 70,
+    "sfreq_hz": 300.0,
+    "conditions": {
+      "famous": 49,
+      "unfamiliar": 47,
+      "scrambled": 50
+    },
+    "evoked_crop_s": [
+      -0.2,
+      0.8
+    ],
+    "noise_cov_window_s": [
+      -0.25,
+      0.0
+    ],
+    "noise_cov_method": "empirical, rank='info'",
+    "source_space_spacing": "oct5",
+    "bem_ico": 4,
+    "bem_conductivity_S_per_m": [
+      0.3,
+      0.006,
+      0.3
+    ],
+    "forward_mindist_mm": 5.0,
+    "n_sources": 2052,
+    "leadfield_shape": [
+      74,
+      6156
+    ]
+  },
+  "suggested_inverse_settings": {
+    "loose": 0.2,
+    "depth": 0.8,
+    "methods": [
+      "MNE",
+      "dSPM",
+      "sLORETA"
+    ],
+    "snr_values": [
+      1.0,
+      2.0,
+      3.0,
+      5.0
+    ],
+    "lambda2": "1 / snr**2"
+  },
+  "files": {
+    "sub-01-eeg-ave.fif": {
+      "size_bytes": 7109741,
+      "sha256": "f9fc558ca044d132b89094439cbb8a890b229e2a020975da97b45ef6f620c6f3"
+    },
+    "sub-01-eeg-cov.fif": {
+      "size_bytes": 21652,
+      "sha256": "654fb09149a51d67807437490e2ca7a6321cafbdca32655333d3a7686200bda6"
+    },
+    "sub-01-eeg-epo.fif": {
+      "size_bytes": 19164330,
+      "sha256": "229cd5d29855f8b5d890cdb384e14f2cf77375ca8721932e0a971e988d70f736"
+    },
+    "sub-01-eeg-fwd.fif": {
+      "size_bytes": 16396558,
+      "sha256": "d61ffe8bf1d515a735e8ced27b18e2c979df47c4d7e6e4fe45d929eee99e4e9d"
+    },
+    "sub-01-src.fif": {
+      "size_bytes": 14564296,
+      "sha256": "c80c57b9ccb2a815a1cafb6881abed70d8825d467ea7e43d43162dcc71f7b5e3"
+    },
+    "sub-01-trans.fif": {
+      "size_bytes": 212,
+      "sha256": "1c30e9d01f6af9dbd11264076a79bf8fdca551bd03408e7f4ede2656789eb0c4"
+    }
+  }
+}

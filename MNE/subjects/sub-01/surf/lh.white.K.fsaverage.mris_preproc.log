@@ -1,0 +1,92 @@
+vendredi 2 décembre 2022, 23:00:21 (UTC+0100)
+setenv SUBJECTS_DIR /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs
+cd /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/sub-01/surf
+/usr/local/freesurfer/bin/mris_preproc --s sub-01 --hemi lh --meas white.K --target fsaverage --out lh.white.K.fsaverage.mgh
+
+Linux icm-meg-le41.icm-institute.org 4.15.0-194-generic #205-Ubuntu SMP Fri Sep 16 19:49:27 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+$Id: mris_preproc,v 1.76.2.1 2016/08/12 17:55:45 zkaufman Exp $
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+tmpdir is ./tmp.mris_preproc.8879
+Src lh sphere.reg
+Trg lh sphere.reg
+
+
+
+
+---------------------------------------------------
+#@# 1/1 sub-01 vendredi 2 décembre 2022, 23:00:21 (UTC+0100) --------------
+-----------------------
+mri_surf2surf --srcsubject sub-01 --srchemi lh --srcsurfreg sphere.reg --trgsubject fsaverage --trghemi lh --trgsurfreg sphere.reg --tval ./tmp.mris_preproc.8879/sub-01.1.mgh --sval /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/sub-01/surf/lh.white.K --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs
+cd /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/sub-01/surf
+mri_surf2surf --srcsubject sub-01 --srchemi lh --srcsurfreg sphere.reg --trgsubject fsaverage --trghemi lh --trgsurfreg sphere.reg --tval ./tmp.mris_preproc.8879/sub-01.1.mgh --sval /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/sub-01/surf/lh.white.K --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname icm-meg-le41.icm-institute.org
+machine  x86_64
+user     maximilien.chaumon
+srcsubject = sub-01
+srcval     = /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/sub-01/surf/lh.white.K
+srctype    = curv
+trgsubject = fsaverage
+trgval     = ./tmp.mris_preproc.8879/sub-01.1.mgh
+trgtype    = 
+srcsurfreg = sphere.reg
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = lh.cortex.label
+label-trg  = lh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/sub-01/surf/lh.sphere.reg
+Loading source data
+Reading curvature file /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/sub-01/surf/lh.white.K
+Reading source subject label mask lh.cortex.label
+masking the input
+Reading target surface reg /DATA_FAST/DATA/Brainstorm_Tuto/practical2022/subs/fsaverage/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (138517)
+Reverse Loop had 22762 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 145849, nTrgMulti = 17993, MnTrgMultiHits = 2.26505
+nSrc121 = 100723, nSrcLost =     0, nSrcMulti = 37794, MnSrcMultiHits = 2.27234
+Reading target space mask label lh.cortex.label
+masking the input
+Saving target data
+Saving to ./tmp.mris_preproc.8879/sub-01.1.mgh
+
+
+
+-----------------------
+mri_concat ./tmp.mris_preproc.8879/sub-01.1.mgh --o lh.white.K.fsaverage.mgh
+ninputs = 1
+Checking inputs
+nframestot = 1
+Allocing output
+Done allocing
+nframes = 1
+Writing to lh.white.K.fsaverage.mgh
+
+
+
+Cleaning up
+-----------------------
+rm -r ./tmp.mris_preproc.8879
+vendredi 2 décembre 2022, 23:00:26 (UTC+0100)
+mris_preproc done
