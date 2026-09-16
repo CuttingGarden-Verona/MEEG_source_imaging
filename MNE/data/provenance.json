@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-15T06:33:36+00:00",
+  "generated_utc": "2026-09-16T06:38:28+00:00",
   "generated_by": "00_prepare_dataset.py",
   "dataset": {
     "name": "ds000117 (Wakeman & Henson 2015), versione ridotta 'ds000117_pruned'",
@@ -74,7 +74,7 @@
       0.0
     ],
     "noise_cov_method": "empirical, rank='info'",
-    "source_space_spacing": "oct5",
+    "source_space_spacing": "oct6",
     "bem_ico": 4,
     "bem_conductivity_S_per_m": [
       0.3,
@@ -82,10 +82,10 @@
       0.3
     ],
     "forward_mindist_mm": 5.0,
-    "n_sources": 2052,
+    "n_sources": 8193,
     "leadfield_shape": [
-      74,
-      6156
+      70,
+      24579
     ]
   },
   "suggested_inverse_settings": {
@@ -118,12 +118,12 @@
       "sha256": "229cd5d29855f8b5d890cdb384e14f2cf77375ca8721932e0a971e988d70f736"
     },
     "sub-01-eeg-fwd.fif": {
-      "size_bytes": 16396558,
-      "sha256": "d61ffe8bf1d515a735e8ced27b18e2c979df47c4d7e6e4fe45d929eee99e4e9d"
+      "size_bytes": 21603500,
+      "sha256": "f28188c8f29089d632b566d5f6a2af258e1a4cb477c3d9b38a2df0e2109bdab4"
     },
     "sub-01-src.fif": {
-      "size_bytes": 14564296,
-      "sha256": "c80c57b9ccb2a815a1cafb6881abed70d8825d467ea7e43d43162dcc71f7b5e3"
+      "size_bytes": 14711752,
+      "sha256": "4ce4d117f4fbed56ae55258f627492e101af13850f42eb0d58a8cfb49c2483ca"
     },
     "sub-01-trans.fif": {
       "size_bytes": 212,
