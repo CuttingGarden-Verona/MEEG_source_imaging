@@ -1,7 +1,7 @@
 # EEG source reconstruction: inverse methods and regularization
 
 Material for the hands-on session on **source reconstruction**, built on top of the
-MNE-Python material of PracticalMEEG (dataset `ds000117`, subject `sub-01`).
+[MNE-Python](https://mne.tools/stable/index.html) material of [PracticalMEEG 2025](https://zenodo.org/records/18359739)(dataset `ds000117`, subject `sub-01`).
 
 Everything upstream of the inverse problem has already been computed and is
 distributed with this folder. The session is entirely about what happens **after**
@@ -14,9 +14,8 @@ seeing how much of the resulting cortical map depends on those choices.
 
 ## What we will do
 
-The inverse problem is ill-posed: there are far more candidate sources than sensors,
-so infinitely many source distributions explain the same data equally well. Every
-reconstruction algorithm resolves that ambiguity by adding assumptions. The aim of
+The inverse problem is ill-posed: the solution is not unique; many source distributions explain the same data 
+equally well. Every reconstruction algorithm resolves that ambiguity by adding a priori assumptions. The aim of
 this session is not to obtain "the correct picture of the brain", but to see what
 those assumptions do to the picture, and to learn which parameters must be reported
 for a result to be reproducible.
@@ -32,18 +31,30 @@ By the end of the session you should be able to:
 6. display reconstructed activity on the cortical surface and drive the 3D viewer;
 7. reproduce the whole analysis from the distributed files and the documented parameters.
 
-### The three conditions
+## Dataset and teaching material
 
-Epochs were averaged separately into three conditions. **No contrast is computed**:
+We use the **Wakeman & Henson multimodal face-processing dataset**.
+
+For this hands-on we focus on:
+
+- subject: **sub-01**
+- run: **Run 01**
+- modality: **EEG**
+- Epochs were averaged separately into three conditions. **No contrast is computed**:
 each condition is reconstructed on its own.
-
 | condition | triggers | description |
 |---|---|---|
 | `famous` | 5, 6, 7 | famous faces |
 | `unfamiliar` | 13, 14, 15 | unfamiliar faces |
 | `scrambled` | 17, 18, 19 | scrambled faces |
 
----
+Useful resources:
+
+- [Wakeman & Henson dataset paper](https://www.nature.com/articles/sdata20151)
+- [From raw MEG/EEG to publication: How to perform MEG/EEG group analysis with free academic software](https://www.frontiersin.org/research-topics/5158/from-raw-megeeg-to-publication-how-to-perform-megeeg-group-analysis-with-free-academic-software/magazine)
+- [PracticalMEEG 2025 Brainstorm materials](https://zenodo.org/records/17644377)
+- [PracticalMEEG 2025 MNE-Python materials](https://zenodo.org/records/18359739)
+
 
 ## Before the session
 
@@ -185,7 +196,7 @@ The lead field: how each cortical source would project onto the electrodes.
 
 - **three-layer BEM** (brain, skull, scalp), conductivities (0.3, 0.006, 0.3) S/m —
   three layers are indispensable for EEG, whereas MEG would only need the inner one;
-- `oct5` surface source space, ~8200 sources (~4100 per hemisphere);
+- `oct6` surface source space, ~8200 sources (~4100 per hemisphere);
 - `mindist = 5 mm`;
 - coregistration from `sub-01-trans.fif`;
 - surface orientation with cortical patch statistics.
@@ -203,8 +214,7 @@ or a trial-level analysis.
 
 ### `subjects/sub-01/`
 
-FreeSurfer reconstruction: cortical surfaces for plotting (`surf/`), the `aparc`
-atlas for the ROIs (`label/`), head surfaces (`bem/`), T1 and transformations for MNI
+[FreeSurfer](https://mne.tools/stable/auto_tutorials/forward/10_background_freesurfer.html) reconstruction: segmentation of individual MRI for source space and BEM generation; cortical surfaces for plotting (`surf/`), the `aparc` atlas for the ROIs (`label/`), head surfaces (`bem/`), T1 and transformations for MNI
 coordinates (`mri/`).
 
 ### `data/provenance.json`
