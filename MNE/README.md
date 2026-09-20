@@ -1,7 +1,7 @@
 # EEG source reconstruction: inverse methods and regularization
 
 Material for the hands-on session on **source reconstruction**, built on top of the
-MNE-Python material of PracticalMEEG (dataset `ds000117`, subject `sub-01`).
+[MNE-Python](https://mne.tools/stable/index.html) material of PracticalMEEG (dataset `ds000117`, subject `sub-01`).
 
 Everything upstream of the inverse problem has already been computed and is
 distributed with this folder. The session is entirely about what happens **after**
