@@ -470,18 +470,19 @@ Source time series will be extracted for the **Famous, Unfamiliar, and Scrambled
 2. Open the **Scout** tab.
 3. Select the **Desikan–Killiany** atlas, or the corresponding FreeSurfer atlas available in the protocol.
 4. Select the left and right parcels of interest.
-5. Display the scout time series.
-6. Inspect approximately `0–300 ms`.
-7. Compare **Famous**, **Unfamiliar** and **Scrambled**.
+5. For each scout, use:
+
+```text
+Scout → Set function → Mean
+```
+
+6. Display the scout time series using **Relative** values.
+7. Inspect approximately `0–300 ms`.
+8. Compare **Famous**, **Unfamiliar**, and **Scrambled**.
 
 Brainstorm scout documentation:
 
 ➡️ [Brainstorm Tutorial 23: Scouts](https://neuroimage.usc.edu/brainstorm/Tutorials/Scouts)
-
-### ROI time-series choice
-
-For a polarity-insensitive Brainstorm–MNE comparison, use the same **RMS/power-like summary** in both packages.
-
 
 ---
 
