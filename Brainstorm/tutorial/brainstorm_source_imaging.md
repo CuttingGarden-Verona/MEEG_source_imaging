@@ -563,45 +563,45 @@ Repeat the procedure for the source reconstructions that you want to compare.
 
 # 14. Record your results
 
-Complete one row for each solution you inspect.
+Summarize the main quantitative results obtained from the source reconstructions.
 
-| Method | SNR | Condition | N170 latency | Peak region | Spatial spread | ROI observation |
-|---|---:|---|---:|---|---|---|
-| MNE | 3 | Famous |  |  |  |  |
-| MNE | 3 | Unfamiliar |  |  |  |  |
-| MNE | 3 | Scrambled |  |  |  |  |
-| dSPM | 3 | Famous |  |  |  |  |
-| dSPM | 3 | Unfamiliar |  |  |  |  |
-| dSPM | 3 | Scrambled |  |  |  |  |
-| sLORETA | 3 | Famous |  |  |  |  |
-| sLORETA | 3 | Unfamiliar |  |  |  |  |
-| sLORETA | 3 | Scrambled |  |  |  |  |
-| MNE | 1 | Famous |  |  |  |  |
-| MNE | 1 | Unfamiliar |  |  |  |  |
-| MNE | 1 | Scrambled |  |  |  |  |
-| dSPM | 1 | Famous |  |  |  |  |
-| dSPM | 1 | Unfamiliar |  |  |  |  |
-| dSPM | 1 | Scrambled |  |  |  |  |
-| sLORETA | 1 | Famous |  |  |  |  |
-| sLORETA | 1 | Unfamiliar |  |  |  |  |
-| sLORETA | 1 | Scrambled |  |  |  |  |
-| MNE | 5 | Famous |  |  |  |  |
-| MNE | 5 | Unfamiliar |  |  |  |  |
-| MNE | 5 | Scrambled |  |  |  |  |
-| dSPM | 5 | Famous |  |  |  |  |
-| dSPM | 5 | Unfamiliar |  |  |  |  |
-| dSPM | 5 | Scrambled |  |  |  |  |
-| sLORETA | 5 | Famous |  |  |  |  |
-| sLORETA | 5 | Unfamiliar |  |  |  |  |
-| sLORETA | 5 | Scrambled |  |  |  |  |
+For each solution, report:
 
-The aim is **not** to nominate a universally “best” solution.
+- N170 source peak;
+- MNI peak coordinates;
+- spatial-extent descriptive index at 170 ms;
+- main observation from the predefined ROI time series.
 
-The aim is to identify:
+| Condition | Method | SNR | Peak hemi | N170 peak latency (s) | Peak amplitude | MNI x (mm) | MNI y (mm) | MNI z (mm) | Extent (%) | ROI observation |
+|---|---|---:|---|---:|---:|---:|---:|---:|---:|---|
+| Famous | MNE | 3 | | | | | | | | |
+| Unfamiliar | MNE | 3 | | | | | | | | |
+| Scrambled | MNE | 3 | | | | | | | | |
+| Famous | dSPM | 3 | | | | | | | | |
+| Unfamiliar | dSPM | 3 | | | | | | | | |
+| Scrambled | dSPM | 3 | | | | | | | | |
+| Famous | sLORETA | 3 | | | | | | | | |
+| Unfamiliar | sLORETA | 3 | | | | | | | | |
+| Scrambled | sLORETA | 3 | | | | | | | | |
+| Famous | dSPM | 1 | | | | | | | | |
+| Unfamiliar | dSPM | 1 | | | | | | | | |
+| Scrambled | dSPM | 1 | | | | | | | | |
+| Famous | dSPM | 5 | | | | | | | | |
+| Unfamiliar | dSPM | 5 | | | | | | | | |
+| Scrambled | dSPM | 5 | | | | | | | | |
 
-- what is stable;
-- what changes;
-- which conclusions depend on methodological choices.
+> **Remember**
+>
+> Raw peak amplitudes should not be compared directly across MNE, dSPM and
+> sLORETA because the methods use different scales and normalizations.
+>
+> For the comparison across inverse methods, focus primarily on:
+>
+> - N170 peak latency;
+> - peak localization;
+> - MNI coordinates;
+> - spatial extent;
+> - ROI time-course patterns.
 
 ---
 
