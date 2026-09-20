@@ -486,7 +486,82 @@ Brainstorm scout documentation:
 
 ---
 
-# 13. Record your results
+# 13. Quantify the spatial extent of the source map
+
+Source reconstructions can differ not only in the location of their maximum,
+but also in how focal or spatially extended the reconstructed activity appears.
+
+To describe this effect quantitatively, we use a simple **descriptive index**:
+
+> the fraction of cortical sources whose absolute amplitude is at least
+> **50% of the maximum absolute source amplitude** at **170 ms**.
+
+The same definition is used in the MNE-Python workflow.
+
+A larger value indicates that a larger proportion of the cortical source space
+shows relatively strong activity, whereas a smaller value indicates a more
+focal solution.
+
+## In Brainstorm
+
+Select the source result that you want to analyse.
+
+Right-click on the source result and select:
+
+```text
+File → Copy file path to clipboard
+```
+
+A MATLAB function is provided in:
+
+```text
+Brainstorm/scripts/spatial_extent_bst.m
+```
+
+Run:
+
+```matlab
+ResultFile = clipboard('paste');
+extent = spatial_extent_bst(ResultFile);
+```
+
+By default, the function evaluates the source map at:
+
+```text
+170 ms
+```
+
+using a threshold of:
+
+```text
+50% of the maximum absolute source amplitude
+```
+
+The output contains:
+
+```text
+time_s
+threshold
+n_sources
+n_above_threshold
+extent_fraction
+extent_percent
+```
+
+For the Brainstorm–MNE-Python comparison, use:
+
+```text
+extent_percent
+```
+
+Repeat the procedure for the source reconstructions that you want to compare.
+
+> **Note**
+>
+> This is a simple descriptive index introduced for this hands-on.
+> It should not be interpreted as a standard source-localization metric.
+
+# 14. Record your results
 
 Complete one row for each solution you inspect.
 
