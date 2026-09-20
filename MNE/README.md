@@ -196,7 +196,7 @@ The lead field: how each cortical source would project onto the electrodes.
 
 - **three-layer BEM** (brain, skull, scalp), conductivities (0.3, 0.006, 0.3) S/m —
   three layers are indispensable for EEG, whereas MEG would only need the inner one;
-- `oct5` surface source space, ~8200 sources (~4100 per hemisphere);
+- `oct6` surface source space, ~8200 sources (~4100 per hemisphere);
 - `mindist = 5 mm`;
 - coregistration from `sub-01-trans.fif`;
 - surface orientation with cortical patch statistics.
@@ -214,8 +214,7 @@ or a trial-level analysis.
 
 ### `subjects/sub-01/`
 
-FreeSurfer reconstruction: cortical surfaces for plotting (`surf/`), the `aparc`
-atlas for the ROIs (`label/`), head surfaces (`bem/`), T1 and transformations for MNI
+[FreeSurfer](https://mne.tools/stable/auto_tutorials/forward/10_background_freesurfer.html) reconstruction: segmentation of individual MRI for source space and BEM generation; cortical surfaces for plotting (`surf/`), the `aparc` atlas for the ROIs (`label/`), head surfaces (`bem/`), T1 and transformations for MNI
 coordinates (`mri/`).
 
 ### `data/provenance.json`
