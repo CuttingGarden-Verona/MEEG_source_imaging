@@ -382,21 +382,87 @@ These are **display parameters only**.
 
 ---
 
-# 11. Compare predefined visual ROIs
+# 11. Quantify the N170 source peak
+
+To quantify the N170 source peak, we will use the MATLAB script:
+
+```text
+Brainstorm/scripts/n170_peak_bst.m
+```
+
+The script identifies the maximum **absolute cortical source activity** within the N170 time window:
+
+```text
+120–220 ms
+```
+
+and returns the peak latency, amplitude, hemisphere, and MNI coordinates.
+
+## Select the Brainstorm source result
+
+In the Brainstorm database explorer:
+
+1. Select the source result that you want to analyse.
+2. Right-click on the source result.
+3. Select:
+
+```text
+File → Copy file path to clipboard
+```
+
+## Run the script
+
+In the MATLAB command window, run:
+
+```matlab
+ResultFile = clipboard('paste');
+peak = n170_peak_bst(ResultFile);
+```
+
+The output contains:
+
+```text
+peak_hemi
+peak_vertex
+peak_latency_s
+peak_amplitude
+peak_abs_amplitude
+mni_x
+mni_y
+mni_z
+```
+
+The MNI coordinates are reported in **millimetres**.
+
+Repeat the procedure for the source reconstructions that you want to compare.
+
+
+# 12. Compare predefined visual ROIs
 
 Visual comparison of cortical maps is useful but can be affected by plotting settings.
 
 We will therefore also compare source time series extracted from predefined anatomical ROIs.
 
-For the Brainstorm–MNE comparison, use the **same atlas-defined ROIs** in both software environments.
+For the Brainstorm–MNE comparison, we will use the **same atlas-defined ROIs** in both software environments.
 
-Suggested bilateral Desikan–Killiany parcels:
+The following bilateral regions from the **Desikan–Killiany atlas** will be considered:
 
 | ROI | Interpretation in this exercise |
 |---|---|
-| Pericalcarine | early visual cortex / V1 proxy |
-| Lateral occipital | higher-order visual / OFA-related region |
-| Fusiform | ventral visual / FFA-related region |
+| Lateral occipital | Visual object and face processing |
+| Fusiform | Ventral visual and face-related processing |
+| Inferior temporal | Higher-level visual and object/face processing |
+
+For each ROI, both hemispheres will be considered:
+
+- `lateraloccipital-lh`
+- `lateraloccipital-rh`
+- `fusiform-lh`
+- `fusiform-rh`
+- `inferiortemporal-lh`
+- `inferiortemporal-rh`
+
+Source time series will be extracted for the **Famous, Unfamiliar, and Scrambled** conditions and compared across inverse methods and regularization settings.
 
 ### In Brainstorm
 
@@ -419,7 +485,7 @@ For a polarity-insensitive Brainstorm–MNE comparison, use the same **RMS/power
 
 ---
 
-# 12. Record your results
+# 13. Record your results
 
 Complete one row for each solution you inspect.
 
