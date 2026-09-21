@@ -393,7 +393,7 @@ Brainstorm/scripts/n170_peak_bst.m
 The script identifies the maximum **absolute cortical source activity** within the N170 time window:
 
 ```text
-120–220 ms
+120–200 ms
 ```
 
 and returns the peak latency, amplitude, hemisphere, and MNI coordinates.
@@ -612,7 +612,7 @@ Compare the results in this order.
 ### 1. Temporal information
 
 - Is the main face-related response found at a similar latency?
-- Is the N170 peak latency within the 120–220 ms window comparable?
+- Is the N170 peak latency within the 120–200 ms window comparable?
 - Is the N170 timing robust across methods and software environments?
 
 ### 2. Spatial information
